@@ -14,13 +14,21 @@ class BazaModel(Model):
         database = baza
 
 
-class Uczen(BazaModel):
-    pass
-
-
 class Klasa(BazaModel):
-    pass
+    klasa = CharField(null=False)
+    rok_naboru = CharField(default=0)
+    rok_matury = CharField(default=0)
+    
 
+class Uczen(BazaModel):
+    imie = CharField(null=False)
+    nazwisko = CharField(null=False)
+    plec = IntegerField()
+    klasa = ForeignKeyField(Klasa, related_name='uczniowie')
+    
+def main(args):
+    baza.connect()
+    baza.create_tables([Klasa, Uczen])
 
 if __name__ == '__main__':
     import sys
