@@ -39,6 +39,6 @@ def dodaj_kl():
     elif request.method == 'POST':
         flash_errors(form)
         
-    return render_template('dodaj.html', form=form)
+    return render_template('dodaj_kl.html', form=form)
 
 

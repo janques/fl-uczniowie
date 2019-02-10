@@ -16,8 +16,8 @@ class BazaModel(Model):
 
 class Klasa(BazaModel):
     klasa = CharField(null=False)
-    rok_naboru = CharField(default=0)
-    rok_matury = CharField(default=0)
+    rok_naboru = CharField(null=False)
+    rok_matury = CharField(null=False)
     
 
 class Uczen(BazaModel):
